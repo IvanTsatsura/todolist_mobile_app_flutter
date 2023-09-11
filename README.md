@@ -2,15 +2,7 @@
 
 ToDoList mobile application
 
-## Getting Started
+![image](https://github.com/IvanTsatsura/todolist_mobile_app_flutter/assets/56256224/71f46dae-414c-4323-b789-f43a69af5106)
+![image](https://github.com/IvanTsatsura/todolist_mobile_app_flutter/assets/56256224/87e7a5cb-b531-4e62-af0b-dc0cb2d15f35)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
