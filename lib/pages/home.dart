@@ -12,6 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List tasksList = [];
+  String newTaskStr = '';
 
   @override
   void initState() {
@@ -29,9 +30,9 @@ class _HomeState extends State<Home> {
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: tasksList.length,
-        itemBuilder: (BuildContext context, int index){
-          return Dismissible(
+          itemCount: tasksList.length,
+          itemBuilder: (BuildContext context, int index){
+            return Dismissible(
               key: Key(tasksList[index]),
               child: buildTaskView(index),
               onDismissed: (direction){
@@ -43,9 +44,36 @@ class _HomeState extends State<Home> {
                   //pass task to completed
                 }
               },
-          );
-        }
-      )
+            );
+          }
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.deepPurpleAccent,
+        onPressed: (){
+          showDialog(context: context, builder: (BuildContext context){
+            return AlertDialog(
+              title: const Text('Add new task'),
+              content: TextField(
+                onChanged: (String value){
+                  newTaskStr = value;
+                },
+              ),
+              actions: [
+                ElevatedButton(onPressed: (){
+                  setState(() {
+                    tasksList.add(newTaskStr);
+                  });
+                  Navigator.of(context).pop();
+                },child: const Text('Save'))
+              ],
+            );
+          });
+        },
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+    ),
     );
   }
 
